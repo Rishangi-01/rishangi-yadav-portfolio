@@ -148,7 +148,7 @@ export default function GithubContact() {
         setSentMessage("");
 
         try {
-            const response = await fetch("http://localhost:5001/api/contacts", {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/contacts`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
