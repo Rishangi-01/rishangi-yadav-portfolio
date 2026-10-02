@@ -1,0 +1,603 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8fafc;
+  /* --foreground: #0f172a; */
+  --foreground: #050a14;
+  --card: #ffffff;
+  --border: #e2e8f0;
+  --border-light: #e2e8f0;
+  --muted: #64748b;
+  --primary: #7c3aed;
+  /* --primary-light: #a855f7; */
+  --primary-light: rgb(62 89 181);
+  --gradient: linear-gradient(
+    90deg,
+    rgb(152 78 241) 0%,
+    rgb(107 63 249) 35%,
+    rgb(49 97 249) 100%
+  );
+}
+
+.dark {
+  --background: #050816;
+  --foreground: #f8fafc;
+  --card: #0b1120;
+  --border: #1e293b;
+  --border-light: #e2e8f0;
+  --muted: #94a3b8;
+  --primary: #8b5cf6;
+  --primary-light: #c084fc;
+  --gradient: linear-gradient(
+    90deg,
+    rgb(152 78 241) 0%,
+    rgb(107 63 249) 35%,
+    rgb(49 97 249) 100%
+  );
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+::selection {
+  background: #8b5cf6;
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    #7c3aed,
+    #ec4899
+  );
+  border-radius: 10px;
+}
+
+/* Gradient text */
+
+.gradient-text {
+  background: linear-gradient(
+    90deg,
+    #8b5cf6,
+    #ec4899,
+    #8b5cf6
+  );
+
+  background-size: 200% auto;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  animation: gradientMove 4s linear infinite;
+}
+
+@keyframes gradientMove {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* Background glow */
+
+.glow-purple {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+
+  background: rgba(124, 58, 237, 0.15);
+
+  filter: blur(100px);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+/* Navbar glass */
+
+.glass {
+  background: rgba(5, 8, 22, 0.75);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.dark .glass {
+  background: rgba(5, 8, 22, 0.75);
+}
+
+.light-glass {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+
+
+
+
+/* app/globals.css */
+
+@import "tailwindcss";
+
+/* =====================================================
+   THEME VARIABLES
+===================================================== */
+
+
+
+html.light {
+  --foreground: #f8fafc;
+  --background: #0f172a;
+  --muted: #64748b;
+  --foreground: rgba(255, 255, 255, 0.78);
+  --mutedr: rgba(15, 23, 42, 0.12);
+  --foreground: rgba(124, 58, 237, 0.08);
+}
+
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--foreground);
+  color: var(--background);
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+/* =====================================================
+   GRID
+===================================================== */
+
+.hero-grid {
+  background-image: radial-gradient(
+    rgba(55, 135, 209, 0.8) 1.2px,
+    transparent 1.7px
+  );
+  background-size: 20px 20px;
+  background-position: center;
+  mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.7) 38%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.7) 38%, transparent 100%);
+}
+
+.hero-grid--secondary {
+  transform: scale(1.18);
+  filter: blur(0.3px);
+  opacity: 0.6;
+}
+
+.foreground {
+  background-image:
+    linear-gradient(
+      var(--foreground) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      var(--foreground) 1px,
+      transparent 1px
+    );
+
+  background-size: 60px 60px;
+
+  mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    rgba(0, 0, 0, 0.7) 50%,
+    transparent 100%
+  );
+}
+
+/* =====================================================
+   GRADIENT TEXT
+===================================================== */
+
+.hero-gradient-text {
+  background: var(--gradient);
+
+  background-size: 200% auto;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: nameGradient 5s linear infinite;
+}
+
+@keyframes nameGradient {
+  0% {
+    background-position: 0% center;
+  }
+
+  50% {
+    background-position: 100% center;
+  }
+
+  100% {
+    background-position: 0% center;
+  }
+}
+
+/* =====================================================
+   PRIMARY BUTTON
+===================================================== */
+
+.hero-primary-button {
+  background: linear-gradient(
+    100deg,
+    #9333ea,
+    #6366f1,
+    #3b82f6
+  );
+
+  box-shadow:
+    0 10px 30px rgba(99, 102, 241, 0.22);
+}
+
+.hero-primary-button:hover {
+  box-shadow:
+    0 15px 45px rgba(99, 102, 241, 0.4);
+}
+
+/* =====================================================
+   OUTLINE BUTTON
+===================================================== */
+
+.hero-outline-button {
+  border: 1px solid var(--mutedr);
+  color: var(--background);
+  background: color-mix(
+    in srgb,
+    var(--foreground) 70%,
+    transparent
+  );
+}
+
+.hero-outline-button:hover {
+  border-color: rgba(139, 92, 246, 0.7);
+  color: #a855f7;
+  background: rgba(139, 92, 246, 0.08);
+}
+
+/* =====================================================
+   SOCIAL
+===================================================== */
+
+.hero-social {
+  color: var(--muted);
+}
+
+.hero-social:hover {
+  color: #a855f7;
+  background: rgba(139, 92, 246, 0.08);
+}
+
+/* =====================================================
+   PHOTO BLOB
+===================================================== */
+
+.hero-photo-blob {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(99, 102, 241, 0.95),
+      rgba(99, 102, 241, 0.65)
+    );
+
+  box-shadow:
+    0 0 80px rgba(99, 102, 241, 0.2);
+
+  animation: blobFloat 6s ease-in-out infinite;
+}
+
+@keyframes blobFloat {
+  0%,
+  100% {
+    transform: rotate(-7deg) translateY(0);
+  }
+
+  50% {
+    transform: rotate(-4deg) translateY(-12px);
+  }
+}
+
+/* =====================================================
+   FLOATING CARDS
+===================================================== */
+
+.hero-floating-card {
+  background: var(--foreground);
+  border: 1px solid var(--mutedr);
+  color: var(--background);
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.18);
+}
+
+.hero-floating-card:hover {
+  border-color: rgba(139, 92, 246, 0.5);
+
+  box-shadow:
+    0 15px 45px rgba(124, 58, 237, 0.18);
+}
+
+/* =====================================================
+   LIGHT THEME ADJUSTMENTS
+===================================================== */
+
+html.light .hero-section {
+  background:
+    radial-gradient(
+      circle at 75% 45%,
+      rgba(99, 102, 241, 0.09),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 10% 80%,
+      rgba(168, 85, 247, 0.06),
+      transparent 25%
+    ),
+    var(--foreground);
+}
+
+html.light .hero-photo-blob {
+  box-shadow:
+    0 0 80px rgba(79, 70, 229, 0.18);
+}
+
+html.light .hero-floating-card {
+  box-shadow:
+    0 15px 40px rgba(15, 23, 42, 0.10);
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 767px) {
+  .hero-floating-card {
+    display: none;
+  }
+
+  .hero-section {
+    padding-bottom: 70px;
+  }
+}
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+
+/* ================================
+   ABOUT SECTION ANIMATIONS
+================================ */
+
+@keyframes aboutReveal {
+  from {
+    opacity: 0;
+    transform: translateX(-35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes skillsReveal {
+  from {
+    opacity: 0;
+    transform: translateX(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes cardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatingImage {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.65;
+    transform: scale(1.08);
+  }
+}
+
+.animate-about {
+  animation: aboutReveal 0.8s ease-out both;
+}
+
+.animate-skills {
+  animation: skillsReveal 0.8s ease-out 0.15s both;
+}
+
+.profile-image-wrapper {
+  animation: floatingImage 4s ease-in-out infinite;
+}
+
+.profile-image-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 14px;
+  border: 1px solid var(--primary);
+  opacity: 0.25;
+  animation: pulseGlow 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.stat-card {
+  animation: cardReveal 0.6s ease-out both;
+}
+
+.skill-card {
+  animation: cardReveal 0.6s ease-out both;
+}
+
+/* ================================
+   GLOW BORDER
+================================ */
+
+.skill-card::before,
+.stat-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    color-mix(in srgb, var(--primary) 18%, transparent),
+    transparent
+  );
+  transition: opacity 0.4s ease;
+}
+
+.skill-card:hover::before,
+.stat-card:hover::before {
+  opacity: 1;
+}
+
+/* ================================
+   REDUCE MOTION
+================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 767px) {
+  .animate-about,
+  .animate-skills {
+    animation: cardReveal 0.7s ease-out both;
+  }
+}
+
+/* =========================================
+   EXPERIENCE CUSTOM SCROLLBAR
+========================================= */
+
+.experience-scroll-area {
+  --os-size: 5px;
+  --os-padding-perpendicular: 0px;
+  --os-padding-axis: 0px;
+}
+
+/* Track */
+.experience-scroll-area .os-scrollbar-track {
+  background: transparent !important;
+}
+
+/* Thumb */
+.experience-scroll-area .os-scrollbar-handle {
+  background: linear-gradient(
+    180deg,
+    #a855f7,
+    #7c3aed
+  ) !important;
+
+  border-radius: 999px !important;
+
+  transition:
+    background 0.3s ease,
+    width 0.3s ease;
+}
+
+/* Hover */
+.experience-scroll-area .os-scrollbar-handle:hover {
+  background: linear-gradient(
+    180deg,
+    #c084fc,
+    #8b5cf6
+  ) !important;
+}
