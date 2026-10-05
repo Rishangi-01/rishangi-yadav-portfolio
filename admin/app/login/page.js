@@ -15,7 +15,7 @@ export default function LoginPage() {
   useEffect(() => {
     const check = async () => {
       try {
-        await apiFetch('api/auth/me');
+        await apiFetch('/api/auth/me');
         router.replace('/dashboard');
       } catch (_) {
         // not authenticated yet
