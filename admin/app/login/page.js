@@ -43,7 +43,7 @@ export default function LoginPage() {
     setError('');
 
     try {
-      const result = await apiFetch('api/auth/login', {
+      const result = await apiFetch('/api/auth/login', {
         method: 'POST',
         body: JSON.stringify({ email: form.email, password: form.password }),
       });
