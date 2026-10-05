@@ -248,7 +248,7 @@ export default function ExperienceProjects() {
             </div>
 
             <div className="relative mx-auto max-w-[1500px] px-5 sm:px-8 lg:px-10">
-                <div className="grid grid-cols-1 gap-8 lg:grid-cols-[0.88fr_1.12fr] lg:gap-8 xl:gap-8">
+                <div className="grid grid-cols-1 gap-8 lg:grid-cols-[0.88fr_1.12fr] lg:gap-4 xl:gap-4">
 
                     {/* =================================================
               EXPERIENCE
@@ -539,7 +539,7 @@ function ProjectsColumn({ projects }) {
                 duration: 0.7,
                 ease: [0.22, 1, 0.36, 1],
             }}
-            className="xl:px-8 lg:px-8"
+            className="xl:px-3 lg:px-3"
         >
             {/* Heading */}
 

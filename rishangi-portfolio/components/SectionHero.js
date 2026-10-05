@@ -343,12 +343,12 @@ export default function SectionHero() {
             RIGHT IMAGE
         ===================================================== */}
 
-        <div className="relative mx-auto flex h-[510px] w-full max-w-[570px] items-center justify-center lg:h-[100%]">
-          
+        <div className="relative mx-auto flex h-[510px] w-full max-w-[600px] items-center justify-center lg:h-[100%]">
+
           <img
-            src="/images/hero.png"
+            src="/images/ri.png"
             alt="Rishangi Yadav"
-            className="h-full w-full object-contain object-bottom drop-shadow-[0_20px_50px_rgba(0,0,0,0.35)]"
+            className="h-full w-full object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.35)]"
           />
 
         </div>
