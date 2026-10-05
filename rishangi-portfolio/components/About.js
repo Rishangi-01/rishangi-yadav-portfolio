@@ -89,7 +89,7 @@ export default function About() {
       <div className="relative mx-auto max-w-8xl lg:px-8">
         <div className="grid grid-cols-1 gap-6 xl:grid-cols-11 xl:gap-6">
 
-          <div className="col-span-6 animate-about xl:flex lg:flex flex gap-5">
+          <div className="lg:col-span-6 col-span-6 animate-about xl:flex lg:flex gap-5">
             <div className="grid grid-cols-1 gap-3 md:grid-cols-[1fr_180px] lg:grid-cols-[1fr_185px]">
 
               <div className="order-2 md:order-1">
@@ -125,23 +125,22 @@ export default function About() {
                     <img
                       src="/images/profile.png"
                       alt="Profile"
-                      width={185}
                       height={330}
-                      className="h-[280px] w-[175px] object-cover transition duration-700 hover:scale-105 sm:h-[320px]"
+                      className="h-[280px] lg:w-[175px] w-[100%] object-cover transition duration-700 hover:scale-105 sm:h-[320px]"
                     />
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="mt-8 grid gap-4">
+            <div className="mt-8 grid lg:grid-cols-1 grid-cols-2 gap-4">
               {stats.map((stat, index) => {
                 const Icon = stat.icon;
 
                 return (
                   <div
                     key={stat.label}
-                    className="stat-card group flex min-h-[45px] items-center gap-5 rounded-xl border border-[var(--border-light)] px-5 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-[var(--primary)]/60 hover:shadow-[0_10px_35px_rgba(139,92,246,0.12)]"
+                    className="stat-card group flex lg:min-h-[45px] min-h-[80px] items-center gap-5 rounded-xl border border-[var(--border-light)] px-5 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-[var(--primary)]/60 hover:shadow-[0_10px_35px_rgba(139,92,246,0.12)]"
                     style={{
                       animationDelay: `${index * 120}ms`,
                     }}
@@ -164,7 +163,7 @@ export default function About() {
             </div>
           </div>
 
-          <div className="col-span-5 animate-skills">
+          <div className="lg:col-span-5 col-span-6 animate-skills">
             <div className="mb-7">
               <p className="mb-2 text-sm font-bold uppercase tracking-[0.16em] text-[var(--primary-light)]">
                 My Skills
@@ -175,7 +174,7 @@ export default function About() {
               </h2>
             </div>
 
-            <div className="grid grid-cols-4 gap-4">
+            <div className="grid lg:grid-cols-4 grid-cols-2 gap-4">
               {skillGroups.map((group, groupIndex) => {
                 const GroupIcon = group.icon;
 

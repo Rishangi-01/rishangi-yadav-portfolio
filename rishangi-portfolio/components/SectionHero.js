@@ -240,7 +240,7 @@ export default function SectionHero() {
 
           {/* Buttons */}
 
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -283,7 +283,7 @@ export default function SectionHero() {
                 className="transition-transform duration-300 group-hover:translate-y-1"
               />
             </motion.a>
-          </motion.div>
+          </motion.div> */}
 
           {/* Social icons */}
 
